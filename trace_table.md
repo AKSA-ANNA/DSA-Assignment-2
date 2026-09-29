@@ -28,12 +28,12 @@
 
 | Initial Max Heap | 90 72 85 45 65 50 30 |
 
-| 1st extraction | 85 72 50 45 65 30   90 |
-| 2nd extraction | 72 65 50 45 30   85 90 |
-| 3rd extraction | 65 45 50 30   72 85 90 |
-| 4th extraction | 50 45 30   65 72 85 90 |
-| 5th extraction | 45 30   50 65 72 85 90 |
-| 6th extraction | 30   45 50 65 72 85 90 |
+| 1st extraction | 85 72 50 45 65 30 90 |
+| 2nd extraction | 72 65 50 45 30 85 90 |
+| 3rd extraction | 65 45 50 30 72 85 90 |
+| 4th extraction | 50 45 30 65 72 85 90 |
+| 5th extraction | 45 30 50 65 72 85 90 |
+| 6th extraction | 30 45 50 65 72 85 90 |
 
 ### Final Output
 
