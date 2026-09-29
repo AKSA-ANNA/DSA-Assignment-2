@@ -1,0 +1,5 @@
+Number of patients: 
+7
+
+Severity scores:
+45 72 30 90 65 50 85
