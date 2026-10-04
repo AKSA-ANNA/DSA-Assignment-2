@@ -1,4 +1,3 @@
-
 # DSA Assignment 2
 
 ## Hospital Priority Queue
@@ -13,15 +12,16 @@ Number of patients: 7
 
 Severity scores:
 
-45 72 30 90 65 50 85
+`45 72 30 90 65 50 85`
 
 ## Source Code
 
-The following C programs are included:
+The following C programs are included in the `source-code` folder:
 
-- `maxheap.c` – Inserts the given patient severity scores into a Max Heap.
-- `heapsort.c` – Sorts the severity scores using Heap Sort.
-- `quicksort.c` – Sorts the severity scores using Quick Sort.
+- `source-code/max_heap.c` – Inserts the given patient severity scores
+  into a Max Heap.
+- `source-code/heap_sort.c` – Sorts the severity scores using Heap Sort.
+- `source-code/quick_sort.c` – Sorts the severity scores using Quick Sort.
 
 ## Output
 
@@ -43,25 +43,38 @@ tables for:
 - Heap Sort
 - Quick Sort
 
-## Analysis
+## Analysis and Justification
 
 `analysis.md` contains the analysis and justification, including:
 
-- Complexity analysis
-- Comparison of Heap Sort and Quick Sort
-- Hospital priority queue analysis
+- Max Heap structure and height
+- Number of nodes and levels
+- Suitability of Max Heap for the hospital priority queue
+- Time complexity of priority queue operations
 
+## Comparisons, Swaps, Complexity and Comparison Table
+
+`comparisons_swaps_table.md` contains:
+
+- Number of comparisons and swaps observed
+- Max Heap insertion analysis
+- Heap Sort analysis
+- Quick Sort analysis
+- Heap Sort and Quick Sort complexity comparison
+- Time complexity
+- Space complexity
+- Stability comparison
+- Overall observations
 
 ## Final Conclusion
 
-The Max Heap was successfully constructed using the given patient
-severity scores. Heap Sort and Quick Sort were also implemented to sort
-the same set of severity scores.
+`final_conclusion.md` contains the final conclusion of the assignment.
 
-The final sorted output obtained was:
+The Max Heap is suitable for the hospital priority queue because the
+patient with the highest severity score is always maintained at the
+root, allowing immediate access to the highest-priority patient.
+
+For the given data, both sorting algorithms produced the sorted
+severity scores:
 
 `30 45 50 65 72 85 90`
-
-The Max Heap is suitable for the hospital priority queue because it
-provides immediate access to the patient with the highest severity
-score and supports efficient insertion and deletion operations.
