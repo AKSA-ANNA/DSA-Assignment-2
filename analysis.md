@@ -1,61 +1,41 @@
-# Complexity Analysis, Comparison and Conclusion
+# Analysis and Justification
 
-## 1. Complexity Analysis
+## Heap Structure and Height
 
-### Max Heap Insertion
+The final Max Heap obtained after inserting the given patient severity
+scores is:
 
-Each new element is inserted at the bottom of the heap and moved upward until the Max Heap property is satisfied.
+        90
+       /  \
+     72    85
+    /  \   / \
+   45  65 30 50
 
-- Best Case: O(1)
-- Average Case: O(log n)
-- Worst Case: O(log n)
-- Space Complexity: O(n) for storing the heap
+The heap contains 7 nodes and 3 levels.
 
-For n insertions, the overall complexity is O(n log n).
+Therefore:
 
-### Heap Sort
+- Number of nodes = 7
+- Number of levels = 3
+- Height = 2 edges
 
-Heap Sort first builds a Max Heap and then repeatedly removes the maximum element.
+The maximum severity score, 90, is present at the root of the Max Heap.
 
-- Best Case: O(n log n)
-- Average Case: O(n log n)
-- Worst Case: O(n log n)
-- Auxiliary Space: O(1)
+## Justification
 
-### Quick Sort
+A Max Heap is suitable for implementing the hospital priority queue
+because patients with higher severity scores have higher priority.
 
-Quick Sort partitions the array around a pivot and recursively sorts the
-subarrays.
+The highest-priority patient is always maintained at the root of the
+Max Heap. Therefore, the highest-priority patient can be accessed
+immediately.
 
-- Best Case: O(n log n)
-- Average Case: O(n log n)
-- Worst Case: O(n²)
-- Space Complexity: O(log n) average case due to recursion
+The operations have the following complexities:
 
----
+- Access highest-priority patient: O(1)
+- Insert a new patient: O(log n)
+- Delete the highest-priority patient: O(log n)
 
-## 2. Comparison Table
-
-| Feature | Heap Sort | Quick Sort |
-|---|---|---|
-| Technique | Heap-based sorting | Divide and conquer |
-| Best Case | O(n log n) | O(n log n) |
-| Average Case | O(n log n) | O(n log n) |
-| Worst Case | O(n log n) | O(n²) |
-| Auxiliary Space | O(1) | O(log n) average |
-| Stable | No | No |
-
----
-
-## 3. Hospital Priority Queue Analysis
-
-A Max Heap is suitable for the hospital priority queue because a patient with the highest severity score is always maintained at the root of the heap.
-
-- Highest-priority patient access: O(1)
-- Patient insertion: O(log n)
-- Highest-priority patient deletion: O(log n)
-
-This allows the hospital to continuously insert patients while efficiently accessing the patient with the highest severity.
-
----
-
+Since patients continuously arrive and the hospital needs to identify
+the highest-priority patient immediately, a Max Heap provides an
+efficient solution for the priority queue.
