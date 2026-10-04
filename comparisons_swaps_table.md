@@ -82,7 +82,18 @@ correct position.
 | Heap Sort | 21 | 12 |
 | Quick Sort | 12 | 12 |
 
-## Observation
+## 5. Comparison Table
+
+| Feature | Heap Sort | Quick Sort |
+|---|---|---|
+| Technique | Heap-based sorting | Divide and conquer |
+| Best Case | O(n log n) | O(n log n) |
+| Average Case | O(n log n) | O(n log n) |
+| Worst Case | O(n log n) | O(n²) |
+| Auxiliary Space | O(1) | O(log n) average |
+| Stable | No | No |
+
+## 6. Observation
 
 For the given input, Quick Sort required fewer comparisons than Heap
 Sort. Heap Sort required more comparisons because it repeatedly compares
