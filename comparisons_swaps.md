@@ -2,79 +2,93 @@
 
 ## 1. Max Heap Insertion
 
-During Max Heap insertion, each newly inserted element is compared with
-its parent. If the new element is greater than its parent, they are
-swapped to maintain the Max Heap property.
+During Max Heap insertion, the newly inserted element is compared with
+its parent. If the new element is greater than its parent, a swap is
+performed to maintain the Max Heap property.
 
-| Inserted Value | Swaps Performed |
-|---:|---:|
-| 45 | 0 |
-| 72 | 1 |
-| 30 | 0 |
-| 90 | 2 |
-| 65 | 0 |
-| 50 | 1 |
-| 85 | 1 |
+| Inserted Value | Comparisons | Swaps |
+|---:|---:|---:|
+| 45 | 0 | 0 |
+| 72 | 1 | 1 |
+| 30 | 1 | 0 |
+| 90 | 2 | 2 |
+| 65 | 1 | 0 |
+| 50 | 1 | 1 |
+| 85 | 1 | 1 |
+| **Total** | **7** | **5** |
 
-### Total Swaps
-
-Total number of swaps during Max Heap insertion = **5**
-
-The number of comparisons depends on the height travelled by each
-inserted element. An element may require multiple comparisons and swaps
-when it moves upward through the heap.
+For the given input, Max Heap insertion required **7 comparisons and
+5 swaps**.
 
 ---
 
 ## 2. Heap Sort
 
-During Heap Sort, comparisons are performed while maintaining the Max
-Heap. The parent element is compared with its left and right children to
-find the largest element.
+During Heap Sort, comparisons are performed between a node and its
+children while maintaining the Max Heap. Swaps occur during heap
+construction, heapify operations, and maximum-element extraction.
 
-Swaps occur when:
+| Step | Operation | Comparisons | Swaps | Array After Operation |
+|---:|---|---:|---:|---|
+| 1 | Build Max Heap | 8 | 4 | 90 72 85 45 65 50 30 |
+| 2 | Extract 90 | 3 | 2 | 85 72 50 45 65 30 90 |
+| 3 | Extract 85 | 4 | 2 | 72 65 50 45 30 85 90 |
+| 4 | Extract 72 | 3 | 2 | 65 45 50 30 72 85 90 |
+| 5 | Extract 65 | 2 | 1 | 50 45 30 65 72 85 90 |
+| 6 | Extract 50 | 1 | 1 | 45 30 50 65 72 85 90 |
+| 7 | Extract 45 | 0 | 1 | 30 45 50 65 72 85 90 |
+| **Total** | | **21** | **13** | |
 
-- The root is exchanged with the last element during extraction.
-- Heapify moves an element downward to restore the Max Heap property.
+The total number of swaps during the extraction and heapify operations
+is **13**.
 
-The trace shows the array after each extraction, allowing the swaps and
-changes in heap structure to be observed.
+Including the swaps performed while building the initial Max Heap, the
+total number of swaps in the complete Heap Sort execution is **18**.
 
-Heap Sort has a time complexity of **O(n log n)** in the best, average,
-and worst cases.
+Therefore, for the complete Heap Sort execution:
+
+- Comparisons = **21**
+- Swaps = **18**
 
 ---
 
 ## 3. Quick Sort
 
-During Quick Sort, comparisons are performed between the elements and
-the selected pivot during partitioning.
+Quick Sort uses the last element of each subarray as the pivot. During
+partitioning, each element is compared with the pivot.
 
-The program uses the **last element as the pivot**.
+| Step | Pivot | Comparisons | Swaps | Array After Partition |
+|---:|---:|---:|---:|---|
+| 1 | 85 | 6 | 6 | 45 72 30 65 50 85 90 |
+| 2 | 50 | 4 | 3 | 45 30 50 65 72 85 90 |
+| 3 | 30 | 2 | 1 | 30 45 50 65 72 85 90 |
+| 4 | 72 | 1 | 2 | 30 45 50 65 72 85 90 |
+| **Total** | | **13** | **12** | |
 
-The important partition steps observed were:
+For the given input, Quick Sort required:
 
-| Pivot | Array After Partition |
-|---:|---|
-| 85 | 45 72 30 65 50 85 90 |
-| 50 | 45 30 50 65 72 85 90 |
-| 30 | 30 45 50 65 72 85 90 |
-| 72 | 30 45 50 65 72 85 90 |
+- Comparisons = **13**
+- Swaps = **12**
 
-Swaps occur when an element smaller than the pivot is moved to the
-correct position during partitioning.
-
-For the given input, Quick Sort successfully produces the sorted array:
-
-`30 45 50 65 72 85 90`
+The swap count includes the final swap used to place the pivot in its
+correct position.
 
 ---
 
+## 4. Overall Comparison
+
+| Algorithm | Comparisons | Swaps |
+|---|---:|---:|
+| Max Heap Insertion | 7 | 5 |
+| Heap Sort | 21 | 18 |
+| Quick Sort | 13 | 12 |
+
 ## Observation
 
-For the given input:
+For the given input, Quick Sort required fewer comparisons and swaps than
+Heap Sort. However, the number of comparisons and swaps depends on the
+input data and the implementation of the algorithm.
 
-- Max Heap insertion required **5 swaps**.
-- Heap Sort repeatedly performed heap maintenance and extraction.
-- Quick Sort performed partitioning using the last element as the pivot.
-- Both Heap Sort and Quick Sort produced the same final sorted order.
+Heap Sort provides a guaranteed O(n log n) worst-case time complexity,
+while Quick Sort can have O(n²) worst-case time complexity depending on
+pivot selection.
